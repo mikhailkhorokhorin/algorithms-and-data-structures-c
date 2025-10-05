@@ -1,3 +1,5 @@
+#define STACK_SIZE 1024
+
 void swap(int* a, int* b) {
     int tmp = *a;
     *a = *b;
@@ -24,17 +26,7 @@ int partition(int arr[], int left, int right) {
     }
 }
 
-void quicksort_recursive(int arr[], int left, int right) {
-    if (left < right) {
-        int p = partition(arr, left, right);
-        quicksort_recursive(arr, left, p);
-        quicksort_recursive(arr, p + 1, right);
-    }
-}
-
-#define STACK_SIZE 1024
-
-void quicksort_iterative(int arr[], int n) {
+void quick_sort_iterative(int arr[], int n) {
     int stack[STACK_SIZE], top = -1;
     stack[++top] = 0;
     stack[++top] = n - 1;

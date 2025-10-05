@@ -18,16 +18,7 @@ void merge(int arr[], int left, int mid, int right) {
         arr[left + i] = tmp[i];
 }
 
-void mergeSort(int arr[], int left, int right) {
-    if (left < right) {
-        int mid = (left + right) / 2;
-        mergeSort(arr, left, mid);
-        mergeSort(arr, mid + 1, right);
-        merge(arr, left, mid, right);
-    }
-}
-
-void naturalMergeSort(int arr[], int n) {
+void natural_merge_sort(int arr[], int n) {
     int sorted = 0;
 
     while (!sorted) {
